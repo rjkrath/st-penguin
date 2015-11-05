@@ -1,0 +1,11 @@
+development:
+  adapter: mysql2
+  database: stpenguin
+  username: root
+  password:
+
+test:
+  adapter: mysql2
+  database: stpenguin_test
+  username: root
+  password:

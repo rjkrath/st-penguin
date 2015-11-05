@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.scriptorium {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.container {
+  width: 505px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15px;
+}
+
+.flash {
+  width: 400px;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+}
+
+.flash.notice {
+  border: 1px solid green;
+  background-color: mintcream;
+}
+
+.flash.warning {
+  border: 1px solid yellow;
+  background-color: beige;
+}
+
+.flash.error {
+  border: 1px solid red;
+  background-color: lightpink;
+}
+
+.field_with_errors label {
+  color: red;
+}
+
+.field_with_errors label:before {
+  content: '* ';
+  color: red;
+}
+
+form input.title {
+  width: 100%;
+  line-height: 25px;
+  font-size: 20px;
+}
+
+form textarea.narrative {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.cancel-link {
+  float: left;
+  line-height: 15px;
+  display: inline-block;
+  width: 300px;
+}
+
+.clear {
+  clear: both;
+}
+
+.form-label {
+  margin-bottom: 5px;
+  margin-left: 2px;
+}
+
+.form-input {
+  margin-bottom: 20px;
+}
+
+input.submit-form {
+  float: right;
+  width: 150px;
+  background: white;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  font-color: #BBB;
+}
+
+.scriptorium h1 {
+  text-align: center;
+}

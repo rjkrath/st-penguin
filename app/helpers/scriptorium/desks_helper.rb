@@ -1,0 +1,2 @@
+module Scriptorium::DesksHelper
+end

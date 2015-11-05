@@ -1,0 +1,38 @@
+<div id="title">
+  <%= @story.title %>
+</div>
+
+<div id="narrative">
+  <%= @story.narrative %>
+</div>
+
+<%= link_to('Next >>', '#', id: 'next-story') %>
+
+<script type="text/javascript">
+  var currentStoryId = <%= @story.id %>;
+  var nextStoryUrl = "/books/"
+
+  $(document).ready(function() {
+    $('#next-story').click(function(event) {
+      event.preventDefault();
+
+      $.get(nextStoryUrl + currentStoryId,
+        { format: 'json' })
+        .done(function(data){
+          $('#title').text(data.title);
+          $('#narrative').text(data.narrative);
+
+          currentStoryId = data.id;
+
+          console.log("data", data);
+        })
+        .fail(function() {
+          $('#title').text('No More Stories!');
+          $('#narrative').text('Come back soon!');
+          $('#next-story').hide();
+        })
+
+      ;
+    });
+  });
+</script>

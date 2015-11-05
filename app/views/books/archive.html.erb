@@ -1,0 +1,8 @@
+<h1>Archive</h1>
+
+<% @stories.each do |story| %>
+  <div>
+    <%= link_to(story.title, book_path(story)) %> &mdash; <%= story.created_at.strftime('%x %X') %>
+  </div>
+<% end %>
+

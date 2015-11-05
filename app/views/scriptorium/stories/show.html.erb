@@ -1,0 +1,33 @@
+<% new_story = @story.new_record? %>
+
+<div class="scriptorium">
+  <div class="breadcrumb">
+    <%= link_to('Thy Desk', scriptorium_desk_path) %> >
+    <%= link_to('Stories', scriptorium_stories_path) %> >
+    <%= new_story ? 'New Story' : 'Edit Story' %>
+  </div>
+
+  <% if new_story %>
+    <h1>New Story</h1>
+  <% else %>
+    <h1>Edit Story</h1>
+  <% end %>
+
+  <%= form_for([:scriptorium, @story]) do |form| %>
+    <div class="form-input">
+      <div class="form-label"><%= form.label(:title) %></div>
+      <%= form.text_field(:title, class: 'title') %>
+    </div>
+
+    <div class="form-input">
+      <div class="form-label"><%= form.label(:narrative) %></div>
+      <%= form.text_area(:narrative, cols: 44, rows: 15, class: 'narrative') %>
+    </div>
+
+    <div class="form-input">
+      <%= link_to('Cancel', scriptorium_stories_path, class: 'cancel-link') %>
+      <%= form.submit('Save', class: 'submit-form') %>
+      <div class="clear"/>
+    </div>
+  <% end %>
+</div>
