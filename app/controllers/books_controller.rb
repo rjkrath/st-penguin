@@ -13,6 +13,10 @@ class BooksController < ApplicationController
   end
 
   def archive
-    @stories = Story.all.order('created_at desc')
+    if params[:year].present?
+      @stories = Story.where('YEAR(created_at) = ?', params[:year])
+    else
+      @stories = Story.all.order('created_at desc')
+    end
   end
 end

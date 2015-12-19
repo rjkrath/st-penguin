@@ -12,10 +12,6 @@
  *= require_tree .
  */
 
-.scriptorium {
-  font-size: 20px;
-  line-height: 25px;
-}
 
 .container {
   width: 505px;
@@ -24,73 +20,8 @@
   margin-top: 15px;
 }
 
-.flash {
-  width: 400px;
-  padding: 30px 20px;
-  margin-bottom: 30px;
-}
-
-.flash.notice {
-  border: 1px solid green;
-  background-color: mintcream;
-}
-
-.flash.warning {
-  border: 1px solid yellow;
-  background-color: beige;
-}
-
-.flash.error {
-  border: 1px solid red;
-  background-color: lightpink;
-}
-
-.field_with_errors label {
-  color: red;
-}
-
-.field_with_errors label:before {
-  content: '* ';
-  color: red;
-}
-
-form input.title {
-  width: 100%;
-  line-height: 25px;
-  font-size: 20px;
-}
-
-form textarea.narrative {
-  font-size: 20px;
-  line-height: 25px;
-}
-
-.cancel-link {
-  float: left;
-  line-height: 15px;
-  display: inline-block;
-  width: 300px;
-}
-
 .clear {
   clear: both;
-}
-
-.form-label {
-  margin-bottom: 5px;
-  margin-left: 2px;
-}
-
-.form-input {
-  margin-bottom: 20px;
-}
-
-input.submit-form {
-  float: right;
-  width: 150px;
-  background: white;
-  font-size: 20px;
-  line-height: 20px;
 }
 
 .breadcrumb {
@@ -98,6 +29,26 @@ input.submit-form {
   font-color: #BBB;
 }
 
-.scriptorium h1 {
+.books {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Bookman Old Style", "Serifa BT", "URW Bookman L", "itc bookman", times,	serif;
+}
+
+#title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+#narrative {
+  margin-bottom: 30px;
+  line-height: 18px;
+}
+
+.link-to-another {
   text-align: center;
 }

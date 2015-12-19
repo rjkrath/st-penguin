@@ -1,4 +1,5 @@
 class Scriptorium::StoriesController < ApplicationController
+  layout :scriptorium
 
   before_action :authenticate_author!
   before_action :find_story, except: [:index, :new, :create]

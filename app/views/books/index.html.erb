@@ -1,38 +1,42 @@
-<div id="title">
-  <%= @story.title %>
-</div>
 
-<div id="narrative">
-  <%= @story.narrative %>
-</div>
 
-<%= link_to('Next >>', '#', id: 'next-story') %>
+<div class="books">
+  <div class="menu">Menu</div>
 
-<script type="text/javascript">
-  var currentStoryId = <%= @story.id %>;
-  var nextStoryUrl = "/books/"
+  <div id="title">
+    <%= @story.title %>
+  </div>
 
-  $(document).ready(function() {
-    $('#next-story').click(function(event) {
-      event.preventDefault();
+  <div id="narrative">
+    <%= @story.narrative %>
+  </div>
 
-      $.get(nextStoryUrl + currentStoryId,
-        { format: 'json' })
-        .done(function(data){
-          $('#title').text(data.title);
-          $('#narrative').text(data.narrative);
+  <div class="link-to-another">
+    <%= link_to('Next >>', '#', id: 'next-story') %>
+  </div>
 
-          currentStoryId = data.id;
+  <script type="text/javascript">
+    var currentStoryId = <%= @story.id %>;
 
-          console.log("data", data);
-        })
-        .fail(function() {
-          $('#title').text('No More Stories!');
-          $('#narrative').text('Come back soon!');
-          $('#next-story').hide();
-        })
+    $(document).ready(function() {
+      $('#next-story').click(function(event) {
+        event.preventDefault();
 
-      ;
+        $.get('/books/' + currentStoryId + '/next',
+          { format: 'json' })
+          .done(function(data){
+            $('#title').text(data.title);
+            $('#narrative').text(data.narrative);
+
+            currentStoryId = data.id;
+            console.log("data", data);
+          })
+          .fail(function() {
+            $('#title').text('No More Stories!');
+            $('#narrative').text('Come back soon!');
+            $('#next-story').hide();
+          });
+      });
     });
-  });
-</script>
+  </script>
+</div>

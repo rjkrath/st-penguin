@@ -8,6 +8,7 @@ StPenguin::Application.routes.draw do
 
   resources :books, only: [:index, :show] do
     get :archive, on: :collection
+    get :next, on: :member
   end
 
   root 'books#index'
