@@ -1,0 +1,162 @@
+.scriptorium {
+  font-size: 18px;
+  line-height: 25px;
+  font-family: Helvetica, Arial, Sans-Serif;
+}
+
+.flash {
+  font-size: 16px;
+  width: 400px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.flash.notice {
+  border: 1px solid green;
+  background-color: mintcream;
+}
+
+.flash.warning {
+  border: 1px solid yellow;
+  background-color: beige;
+}
+
+.flash.error {
+  border: 1px solid red;
+  background-color: lightpink;
+}
+
+.field_with_errors label {
+  color: red;
+}
+
+.field_with_errors label:before {
+  content: '* ';
+  color: red;
+}
+
+form input.title {
+  width: 100%;
+  line-height: 25px;
+  font-size: 18px;
+  padding: 2px 5px;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+}
+
+form textarea.narrative {
+  font-size: 18px;
+  line-height: 25px;
+  padding: 3px 5px;
+  border: 1px solid #666;
+}
+
+.cancel-link {
+  float: left;
+  line-height: 15px;
+  display: inline-block;
+  width: 300px;
+  text-decoration: underline;
+}
+
+.form-label {
+  margin-bottom: 2px;
+  margin-left: 2px;
+  font-size: 18px;
+}
+
+.form-input {
+  margin-bottom: 20px;
+}
+
+input.submit-form {
+  float: right;
+  width: 150px;
+  background: white;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.scriptorium h1 {
+  text-align: center;
+}
+
+.create-new {
+  display: inline-block;
+  width: 200px;
+  background-color: #F1F1F1;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #111;
+  border: 1px solid #DDD;
+  margin: 0 0 15px 0;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.story-titles {
+  margin-bottom: 5px;
+  float: left;
+  padding-left: 5px;
+}
+
+.date-created {
+  float: right;
+  width: 230px;
+  text-align: center;
+}
+
+.current-page {
+  color: #888;
+  margin-left: 3px;
+}
+
+.breadcrumb {
+  margin-bottom: 30px;
+}
+
+.breadcrumb a {
+  border-bottom: 1px solid #666;
+  display: inline-block;
+  padding-bottom: 0;
+  line-height: 17px;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.breadcrumb a:first-child {
+  margin-left: 0;
+}
+
+.header {
+  background-color: #EEE;
+  padding-left: 10px;
+  line-height: 35px;
+  margin-bottom: 5px;
+}
+
+.all-stories {
+  line-height: 25px;
+}
+
+.story-row:hover {
+  background-color: #F6FBFC;
+}
+
+.create-new:hover,
+.story-row:hover a {
+  text-decoration: underline;
+}
+
+.story-row:hover .view-live {
+  display: inline-block !important;
+  margin-left: 10px;
+}

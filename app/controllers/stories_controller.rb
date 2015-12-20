@@ -1,11 +1,9 @@
-class Scriptorium::StoriesController < ApplicationController
-  layout :scriptorium
+class StoriesController < ScriptoriumController
 
-  before_action :authenticate_author!
   before_action :find_story, except: [:index, :new, :create]
 
   def index
-    @stories = Story.all
+    @stories = Story.order('created_at desc')
   end
 
   def new
@@ -17,8 +15,8 @@ class Scriptorium::StoriesController < ApplicationController
     @story = Story.new(story_params)
 
     if @story.save
-      flash[:notice] = 'Yay!'
-      redirect_to scriptorium_stories_path
+      flash[:notice] = "'#{@story.title}' was created."
+      redirect_to stories_path
     else
       flash.now[:error] = @story.errors.full_messages
       render :show
@@ -30,8 +28,8 @@ class Scriptorium::StoriesController < ApplicationController
 
   def update
     if @story.update_attributes(story_params)
-      flash[:notice] = 'Double yay!'
-      redirect_to scriptorium_stories_path
+      flash[:notice] = "'#{@story.title}' was updated."
+      redirect_to stories_path
     else
       flash.now[:error] = @story.errors.full_messages
       render :edit
@@ -51,7 +49,7 @@ class Scriptorium::StoriesController < ApplicationController
 
     unless @story
       flash[:warning] = "Can't find requested story with id: #{params[:id]}"
-      redirect_to scriptorium_stories_path
+      redirect_to stories_path
     end
   end
 

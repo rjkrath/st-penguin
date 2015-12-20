@@ -1,0 +1,25 @@
+<div class="scriptorium">
+  <div class="breadcrumb">
+    <%= link_to('Stories', stories_path) %> >
+    <span class="current-page"><%= @story.new_record? ? 'New Story' : 'Edit Story' %></span>
+  </div>
+
+  <%= form_for(@story) do |form| %>
+    <div class="form-input">
+      <div class="form-label"><%= form.label(:title) %></div>
+      <%= form.text_field(:title, class: 'title') %>
+    </div>
+
+    <div class="form-input">
+      <div class="form-label"><%= form.label(:narrative) %></div>
+      <%= form.text_area(:narrative, cols: 54, rows: 15, class: 'narrative') %>
+    </div>
+
+    <div class="form-input">
+      <%= link_to('Cancel', stories_path, class: 'cancel-link') %>
+      <%= form.submit('Save', class: 'submit-form') %>
+
+      <div class="clear"/>
+    </div>
+  <% end %>
+</div>

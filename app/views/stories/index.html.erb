@@ -1,0 +1,22 @@
+<div class="scriptorium">
+  <div><%= link_to('Create new story', new_story_path, class: 'create-new') %></div>
+
+  <div class="all-stories">
+    <div class="header">
+      <div style="float: left">Title</div>
+      <div class="date-created">Date</div>
+      <div class="clear"></div>
+    </div>
+
+    <% @stories.each do |story| %>
+      <div class="story-row">
+        <div class="story-titles">
+          <%= link_to(story.title, story_path(story)) %>
+          <%= link_to('View > ', book_path(story), class: 'view-live', style: 'display: none') %>
+        </div>
+        <div class="date-created"><%= story.created_at %></div>
+        <div class="clear"></div>
+      </div>
+    <% end %>
+  </div>
+</div>
