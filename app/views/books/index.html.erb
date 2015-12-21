@@ -1,8 +1,9 @@
-
+<script type="text/javascript">
+  var currentStoryId = <%= @story.id %>;
+  var firstStory = <%= @story.id %>;
+</script>
 
 <div class="books">
-  <div class="menu">Menu</div>
-
   <div id="title">
     <%= @story.title %>
   </div>
@@ -12,31 +13,11 @@
   </div>
 
   <div class="link-to-another">
+    <%= link_to('<< Previous', '#', id: 'previous-story', style: 'display: none') %>
     <%= link_to('Next >>', '#', id: 'next-story') %>
   </div>
 
-  <script type="text/javascript">
-    var currentStoryId = <%= @story.id %>;
-
-    $(document).ready(function() {
-      $('#next-story').click(function(event) {
-        event.preventDefault();
-
-        $.get('/books/' + currentStoryId + '/next',
-          { format: 'json' })
-          .done(function(data){
-            $('#title').text(data.title);
-            $('#narrative').text(data.narrative);
-
-            currentStoryId = data.id;
-            console.log("data", data);
-          })
-          .fail(function() {
-            $('#title').text('No More Stories!');
-            $('#narrative').text('Come back soon!');
-            $('#next-story').hide();
-          });
-      });
-    });
-  </script>
+  <div class="mini-menu">
+    <%= link_to('Archive', archive_books_path) %>
+  </div>
 </div>
